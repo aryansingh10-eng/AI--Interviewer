@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Interviewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <h1>🤖 AI Interviewer</h1>
+    <p class="subtitle">Voice-based AI interview simulation</p>
+
+    <div class="card">
+
+      <!-- Webcam Preview -->
+      <video id="video" autoplay muted playsinline></video>
+
+      <!-- Hidden Canvas for FER capture -->
+      <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+
+      <!-- ✅ AI Question Display -->
+      <div class="ai-question">
+        <p class="label">AI Question</p>
+        <h2 id="questionText">Click "Start Interview" to begin</h2>
+      </div>
+
+      <!-- Status -->
+      <p id="status">Ready</p>
+
+      <!-- Answer box -->
+      <textarea id="answerBox" placeholder="Speak or type your answer..."></textarea>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="primary" onclick="startInterview()">Start Interview</button>
+        <button class="secondary" onclick="startListening()">Answer (Voice)</button>
+        <button class="primary" onclick="submitAnswer()">Submit Answer</button>
+      </div>
+
+      <!-- ✅ Hidden Audio Player (No controls visible) -->
+      <audio id="audioPlayer"></audio>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
